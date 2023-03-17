@@ -12,7 +12,7 @@ source:
     - 0001-support-python3.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
