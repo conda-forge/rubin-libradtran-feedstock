@@ -1,5 +1,5 @@
 {% set name = "rubin-libradtran" %}
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: http://www.libradtran.org/download/libRadtran-{{ version }}.tar.gz
-  sha256: 64db9636aea2adaae46bac86dfcc0c72b670edf71d600558a1e5f8ad4e88ab6b
-  patches:
-    - 0001-support-python3.patch
+  sha256: 3f0bc78f0f930c060fd57dbd33e980280003a2498373eda1be92e9254bdce1a6
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -24,6 +22,7 @@ requirements:
     - autoconf
     - gnuconfig
     - automake
+    - gawk
   host:
     - flex
     - perl
@@ -48,7 +47,7 @@ test:
 
 about:
   home: http://libradtran.org
-  summary: 'library for radiative transfer'
+  summary: library for radiative transfer
   description: |
     libradtran (library for radiative transfer) is a collection of C and
     Fortran functions and programs for calculation of solar and thermal
