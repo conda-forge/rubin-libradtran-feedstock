@@ -17,6 +17,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - flex
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
@@ -27,7 +28,6 @@ requirements:
     - automake
     - gawk
   host:
-    - flex
     - perl
     - libnetcdf
     - netcdf4
