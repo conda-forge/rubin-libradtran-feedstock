@@ -10,21 +10,24 @@ source:
   sha256: 3f0bc78f0f930c060fd57dbd33e980280003a2498373eda1be92e9254bdce1a6
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - flex
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
     - make
     - autoconf
     - gnuconfig
     - automake
     - gawk
   host:
-    - flex
     - perl
     - libnetcdf
     - netcdf4
