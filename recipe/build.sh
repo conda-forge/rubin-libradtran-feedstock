@@ -16,7 +16,10 @@ rm -f libsrc_c/.depend
 ./configure --prefix=$PREFIX --with-netcdf4=$PREFIX
 
 make
-make check
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == 0 ]]; then
+    make check
+fi
 make install
 
 # Remove $PREFIX/bin .py files which aren't needed.
