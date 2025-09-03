@@ -7,7 +7,7 @@ package:
 
 source:
   url: http://www.libradtran.org/download/libRadtran-{{ version }}.tar.gz
-  sha256: 64930cc40b6e4a37aa220520974d330fc1563796f466a649b2238131f2d69840
+  sha256: 999e47f4af4b5df6f85a6887fc105fc8f6e1a7cee89a3124f69ac8d8912c8e85
 
 build:
   number: 0
